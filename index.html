@@ -1,19 +1,220 @@
-<!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>My static Space</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-		<div class="card">
-			<h1>Welcome to your static Space!</h1>
-			<p>You can modify this app directly by editing <i>index.html</i> in the Files and versions tab.</p>
-			<p>
-				Also don't forget to check the
-				<a href="https://huggingface.co/docs/hub/spaces" target="_blank">Spaces documentation</a>.
-			</p>
-		</div>
-	</body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio Profissional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#3b82f6',
+                            dark: '#2563eb'
+                        },
+                        secondary: {
+                            light: '#10b981',
+                            dark: '#059669'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .link-card {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .dark .link-card:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        .social-icon {
+            transition: all 0.2s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header with Theme Toggle -->
+        <header class="flex justify-between items-center mb-12">
+            <div>
+                <h1 class="text-3xl font-bold text-primary-light dark:text-primary-dark">Meu Portfólio</h1>
+                <p class="text-gray-600 dark:text-gray-400">Links profissionais e projetos</p>
+            </div>
+            <button id="themeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                <i class="fas fa-moon dark:hidden"></i>
+                <i class="fas fa-sun hidden dark:block"></i>
+            </button>
+        </header>
+
+        <!-- Profile Section -->
+        <section class="mb-12 flex flex-col md:flex-row items-center gap-6">
+            <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-primary-light dark:border-primary-dark">
+                <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" 
+                     alt="Foto de perfil" class="w-full h-full object-cover">
+            </div>
+            <div class="text-center md:text-left">
+                <h2 class="text-2xl font-bold">[Seu Nome]</h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-2">[Sua Profissão]</p>
+                <p class="text-sm text-gray-500 dark:text-gray-500 max-w-md">Profissional dedicado com experiência em [suas habilidades]. Comprometido com excelência e inovação em todos os projetos.</p>
+            </div>
+        </section>
+
+        <!-- Main Links -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold mb-6 border-b pb-2 border-gray-200 dark:border-gray-700">Links Principais</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Link Card 1 -->
+                <a href="#" class="link-card bg-white dark:bg-gray-800 rounded-lg p-6 flex items-center gap-4 shadow-md border border-gray-100 dark:border-gray-700">
+                    <div class="w-12 h-12 rounded-lg bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center">
+                        <i class="fas fa-briefcase text-blue-500 dark:text-blue-400 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium">Portfólio Completo</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Meus melhores projetos</p>
+                    </div>
+                </a>
+
+                <!-- Link Card 2 -->
+                <a href="#" class="link-card bg-white dark:bg-gray-800 rounded-lg p-6 flex items-center gap-4 shadow-md border border-gray-100 dark:border-gray-700">
+                    <div class="w-12 h-12 rounded-lg bg-green-50 dark:bg-green-900/30 flex items-center justify-center">
+                        <i class="fas fa-file-alt text-green-500 dark:text-green-400 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium">Currículo Atualizado</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">PDF para download</p>
+                    </div>
+                </a>
+
+                <!-- Link Card 3 -->
+                <a href="#" class="link-card bg-white dark:bg-gray-800 rounded-lg p-6 flex items-center gap-4 shadow-md border border-gray-100 dark:border-gray-700">
+                    <div class="w-12 h-12 rounded-lg bg-purple-50 dark:bg-purple-900/30 flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-purple-500 dark:text-purple-400 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium">GitHub</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Meus códigos e repositórios</p>
+                    </div>
+                </a>
+
+                <!-- Link Card 4 -->
+                <a href="#" class="link-card bg-white dark:bg-gray-800 rounded-lg p-6 flex items-center gap-4 shadow-md border border-gray-100 dark:border-gray-700">
+                    <div class="w-12 h-12 rounded-lg bg-red-50 dark:bg-red-900/30 flex items-center justify-center">
+                        <i class="fab fa-youtube text-red-500 dark:text-red-400 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium">Vídeos</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Tutoriais e demonstrações</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Projects Showcase -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold mb-6 border-b pb-2 border-gray-200 dark:border-gray-700">Destaques</h2>
+            <div class="grid grid-cols-1 gap-4">
+                <!-- Project 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-100 dark:border-gray-700">
+                    <h3 class="font-bold text-lg mb-2">Projeto Inovador</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Descrição breve do projeto e tecnologias utilizadas. Destaque os resultados alcançados e o impacto gerado.</p>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-xs">React</span>
+                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-full text-xs">Node.js</span>
+                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 rounded-full text-xs">MongoDB</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-100 dark:border-gray-700">
+                    <h3 class="font-bold text-lg mb-2">Sistema Empresarial</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Solução completa desenvolvida para otimizar processos internos de uma grande empresa, resultando em 30% de aumento de eficiência.</p>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200 rounded-full text-xs">JavaScript</span>
+                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-xs">SQL</span>
+                        <span class="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200 rounded-full text-xs">AWS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Links -->
+        <section class="mb-12">
+            <h2 class="text-xl font-semibold mb-6 border-b pb-2 border-gray-200 dark:border-gray-700">Redes Sociais</h2>
+            <div class="flex justify-center gap-6">
+                <a href="#" class="social-icon w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900/30">
+                    <i class="fab fa-linkedin-in text-blue-500 dark:text-blue-400 text-xl"></i>
+                </a>
+                <a href="#" class="social-icon w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-600">
+                    <i class="fab fa-github text-gray-700 dark:text-gray-300 text-xl"></i>
+                </a>
+                <a href="#" class="social-icon w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-blue-50 dark:hover:bg-blue-900/30">
+                    <i class="fab fa-twitter text-blue-400 dark:text-blue-300 text-xl"></i>
+                </a>
+                <a href="#" class="social-icon w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-pink-50 dark:hover:bg-pink-900/30">
+                    <i class="fab fa-instagram text-pink-500 dark:text-pink-400 text-xl"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-100 dark:border-gray-700">
+            <h2 class="text-xl font-semibold mb-4">Entre em Contato</h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Disponível para oportunidades e colaborações.</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="mailto:seuemail@exemplo.com" class="flex-1 bg-primary-light dark:bg-primary-dark text-white py-3 px-6 rounded-lg text-center font-medium hover:bg-opacity-90 transition-colors">
+                    Enviar Email
+                </a>
+                <a href="#" class="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 py-3 px-6 rounded-lg text-center font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                    Agendar Reunião
+                </a>
+            </div>
+        </section>
+
+        <footer class="mt-12 text-center text-sm text-gray-500 dark:text-gray-500">
+            <p>© 2023 [Seu Nome]. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // Check for saved theme preference or use system preference
+        const currentTheme = localStorage.getItem('theme') || 
+                            (prefersDarkScheme.matches ? 'dark' : 'light');
+        
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+        
+        themeToggle.addEventListener('click', function() {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Andressamegah/portf-lio" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
 </html>
